@@ -20,4 +20,7 @@ Note: Ubuntu is very reliant on fast storage; It will be extremely useful to hav
 ![Install Image](/images/new-user.png?raw=true)
 
 
-Once you have creat
+Once you have created a new UNIX username and password we will need to update and upgrade the system. Run <code>sudo apt-get update && sudo apt-get upgrade</code>.
+![Install Image](/images/new-user.png?raw=true)
+![Install Image](/images/new-user.png?raw=true)
+
