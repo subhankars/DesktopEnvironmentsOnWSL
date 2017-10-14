@@ -10,6 +10,14 @@ What we want to do first is install WSL if you have not done so. Some requiremen
 - Developer Mode: head to Update & Security > For Developers. Activate the “Developer Mode” switch here to enable Developer Mode.
 - Have it enabled: Next, open the Control Panel, click “Programs,” and click “Turn Windows Features On or Off” under Programs and Features. Enable the “Windows Subsystem for Linux (Beta)” option in the list here and click “OK.”
 
-Run <code>lxrun /install</code> to download the application from the Windows Store.
+Run <code>lxrun /install</code> or <code>bash</code> to download the application from the Windows Store.
 
 ![Install Image](/images/bashshellinstall.png?raw=true)
+
+Ubuntu should download, its File System should be extracted and it should prompt you to create a UNIX account.
+Note: Ubuntu is very reliant on fast storage; It will be extremely useful to have an SSD because massive read/write will occur and many small files will be accessed simultaneously. Extracting file system and installing anything later on ubuntu will be much faster with a SSD. The maximum "extracting filesystem" should take is 45 minutes.
+
+![Install Image](/images/new-user.png?raw=true)
+
+
+Once you have creat
