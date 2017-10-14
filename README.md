@@ -1,2 +1,15 @@
 # DesktopEnvironmentsOnWSL
-A guide to successfully setting up Bash on Ubuntu on Windows to run a full desktop environemt
+A guide to successfully setting up Bash on Ubuntu on Windows to run a full desktop environment such as Unity on Windows 10.
+
+"The Windows Subsystem for Linux lets developers run Linux environments -- including most command-line tools, utilities, and applications - directly on Windows, unmodified, without the overhead of a virtual machine." - Microsoft Developer Network
+
+The Windows Subsystem for Linux is meant for command-line utilities and running the occasional linux program. It runs a ubuntu-based Bash shell atop the subsystem. There are limitations though: It won't work with server software and it'll crash often and just spam errors. But we can make it work!
+
+What we want to do first is install WSL if you have not done so. Some requirements:
+- Windows 10 Anniversary Update or greater
+- Developer Mode: head to Update & Security > For Developers. Activate the “Developer Mode” switch here to enable Developer Mode.
+- Have it enabled: Next, open the Control Panel, click “Programs,” and click “Turn Windows Features On or Off” under Programs and Features. Enable the “Windows Subsystem for Linux (Beta)” option in the list here and click “OK.”
+
+Run <code>lxrun /install</code> to download the application from the Windows Store.
+
+
