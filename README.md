@@ -3,7 +3,7 @@ A guide to successfully setting up Bash on Ubuntu on Windows to run a full deskt
 
 "The Windows Subsystem for Linux lets developers run Linux environments -- including most command-line tools, utilities, and applications - directly on Windows, unmodified, without the overhead of a virtual machine." - Microsoft Developer Network
 
-The Windows Subsystem for Linux is meant for command-line utilities and running the occasional linux program. It runs a ubuntu-based Bash shell atop the subsystem. There are limitations though: It won't work with server software and it'll crash often and just spam errors. But we can make it work!
+The Windows Subsystem for Linux is meant for command-line utilities and running the occasional linux program. It runs a ubuntu-based Bash shell atop the subsystem. There are limitations though: It won't work with server software and it'll crash often and just spam errors. But we can make it work to run an entire desktop environment!
 
 What we want to do first is install WSL if you have not done so. Some requirements:
 - Windows 10 Anniversary Update or greater
