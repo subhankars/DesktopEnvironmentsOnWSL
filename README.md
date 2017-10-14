@@ -12,4 +12,4 @@ What we want to do first is install WSL if you have not done so. Some requiremen
 
 Run <code>lxrun /install</code> to download the application from the Windows Store.
 
-
+![Install Image](/images/bashshellinstall.png?raw=true)
