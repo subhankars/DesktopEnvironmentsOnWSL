@@ -1,4 +1,4 @@
-# DesktopEnvironmentsOnWSL
+﻿# DesktopEnvironmentsOnWSL
 A guide to successfully setting up Bash on Ubuntu on Windows to run a full desktop environment such as Unity on Windows 10.
 
 "The Windows Subsystem for Linux lets developers run Linux environments -- including most command-line tools, utilities, and applications - directly on Windows, unmodified, without the overhead of a virtual machine." - Microsoft Developer Network
@@ -45,6 +45,17 @@ Now you can run graphical linux programs without having to set the display manua
 - <code>sudo apt-get install unity</code>
 - <code>sudo apt-get install compiz-core</code>
 - <code>sudo apt-get install compizconfig-settings-manager</code>
+
 This might take a while (30 min+), so take a break while its executing and go outside or something.
 
-Ok, so when it's done.
+Ok, so when it's done, just test it by running <code>nautilus</code> or <code>sudo nautilus</code>
+
+If it worked, great! We now need to fix the DBus. The DBus is an inter-process communication and remote procedure call. So basically D-Bus allows applications to talk to each other, sometimes so they can launch each other. Like when you launch an application through a hyperlink. WSL still does not have functionality for D-Bus, so any program you run will be unstable and will not function properly. We need to find an alternative to the dbus that will still allow interprocess communication, namely TCP. A reddit user named ShaRose discovered the TCP fix which allows you to use the TCP ports inside of UNIX sockets. TO run the fix you can run <code>sudo sed -i 's$<listen>.*</listen>$<listen>tcp:host=localhost,port=0</listen>$' /etc/dbus-1/session.conf</code>.
+
+I got an error when running ShaRose's fix so I did some digging into the problem. If you also got the error try this. The problem is that the <code>/etc/dbus-1/session.conf</code> no longer exists. So we will manually create a <code>session.conf</code> file there and a <code>session-local.conf</code>. To create these files run
+- <code>sudo nano /etc/dbus-1/session.conf</code>. Copy and paste the session.conf text from the repository into the terminal and save.
+- <code>sudo nano /etc/dbus-1/session-local.conf<code>. Anything in here will override the session.conf so this is where we will put in custom configurations. Copy the code from the repository and paste it into this file.
+Save both files and exit.
+
+Now run <code>unity</code>. It may take a few seconds, but Unity should start. Sometimes the background doesn't start but it can be fixed by launching nautilus and closing it.
+
